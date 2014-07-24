@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">HOME</h1>
+    </div>
+   </div>
+   <div class="content">
+   <input type="text" class="topcoat-text-input" id="txt_vinnumber" name="txt_vinnumber"  onblur="javascript:changecolor('txt_vinnumber');"  
+                   value="" placeholder="Enter vin number" style="width:83%" value="">
+    <div style="padding-top:20px;">
+    <table style="width:100%"><tr><td>
+        <a class="button--large"  style="width:100%" id="scan" >Scan</a></td><td style="padding-left:5px">
+        <a class="button--large"  style="width:70%"  href="javascript:getvindetails();" >Get Details</a>
+        </td></tr></table>
+   </div>
+   </div>
+  <script type="text/javascript" src="barcodescanner.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script src="components/loader.js"></script>
+  <script type="text/javascript">
+        app.initialize();
+  </script>
+</body>
+</html>

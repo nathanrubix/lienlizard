@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+        var ImageArray = [];
+        function SelectImages() {
+            ImageArray = [];
+            window.imagePicker.getPictures(
+                function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        AddUploadImageToArray(results[i]);
+                    }
+                    UploadImages();
+                }, function (error) {
+                    console.log('Error: ' + error);
+                }, {
+                    maximumImagesCount: 10,
+                    width: 800
+                }
+            );
+        }
+
+        function AddUploadImageToArray(Image) {
+            var IsImageExist = false;
+            if (ImageArray.length > 0) {
+                for (var i = 0; i < ImageArray.length; i++) {
+                    if (ImageArray[i] == Image) {
+                        IsImageExist = true;
+                    }
+                }
+            }
+            if (IsImageExist == false) {
+                ImageArray.push(Image);
+            }
+        }
+
+        function UploadImages() {
+            var options = new FileUploadOptions();
+            var imageURI;
+            var Method = "photoupload";
+            var Xml = getrequestxml(Method);
+            var URL = "http://m.lienlizard.rubixsoftsolutions.com/uploadimage.aspx";
+            if (ImageArray.length > 0) {
+                for (var i = 0; i < ImageArray.length; i++) {
+                    imageURI = ImageArray[i];
+                    options.fileKey = "file";
+                    options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+                    options.mimeType = "image/jpeg";
+                    var params = new Object();
+                    params.value1 = "test";
+                    params.value2 = "param";
+                    options.params = params;
+                    options.chunkedMode = false;
+                    var ft = new FileTransfer();
+                    ft.upload(imageURI, URL, win, fail, options);
+                }
+                alert("Images Uploaded Successfully");
+                var Method = "getconfirmation";
+                var Xml = getrequestxml(Method);
+                APIRequestCall(Xml, Method);
+            } else {
+                alert("Please select atleast one image"); return false;
+            }
+        }
+
+        function win(r) {
+            //alert("Success");
+            //console.log("Code = " + r.responseCode);
+            //console.log("Response = " + r.response);
+            //console.log("Sent = " + r.bytesSent);
+            //alert(r.response);
+        }
+
+        function fail(error) {
+            //alert("error");
+            alert("An error has occurred: Code = " = error.code);
+        }
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">PHOTO UPLOAD</h1>
+    </div>
+    </div>
+    <div class="content">
+    </div>
+    <div style="padding-left:8%;">
+         <a class="button--large" href="javascript:SelectImages();">Select Pictures</a>
+         <br/>
+         <a class="button--large" href="javascript:OpenPage('Home');">Later</a>
+    </div>
+    <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         app.initialize();
+     </script>
+</body>
+</html>

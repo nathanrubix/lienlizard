@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">LOGIN</h1>
+    </div>
+    </div>
+    <div class="content">
+        <table style="width:100%;font-size:11pt; line-height:50px" >
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_username" name="txt_username"  onblur="javascript:changecolor('txt_username');" value="" placeholder="User Name" style="width:83%" value=""></td></tr>
+            <tr><td><input type="password" class="topcoat-text-input" id="txt_password" name="txt_password" onblur="javascript:changecolor('txt_password');" 
+                onkeydown="javascript:if(event.keyCode == 13){validatelogincredentials();}" value="" placeholder="Password" style="width:83%" value=""></tr>
+        </table>
+    </div>
+    <div style="padding-left:8%;">
+         <a class="button--large" href="javascript:validatelogincredentials();">Login</a>
+    </div>
+    <script src="components/loader.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+</html>

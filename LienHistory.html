@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function populatevalues(mode) {
+            if (mode == "default") {
+                setviewstatevalues("currentrid", "-999");
+            }
+            var Method = "getlienhistory";
+            var Xml = getrequestxml(Method);
+            APIRequestCall(Xml, Method);
+        }
+
+        function changehistory(rid) {
+            setviewstatevalues("currentrid", rid);
+            populatevalues('idchanged');
+        }
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">HISTORY</h1>
+    </div>
+    </div>
+    <div class="content" id="historyinfo">
+    </div>
+    <div style="padding-left:8%;">
+         <a class="button--large" href="javascript:OpenPage('Home');">Home</a>
+    </div>
+     <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         //app.initialize();
+         populatevalues('default');
+     </script>
+</body>
+</html>

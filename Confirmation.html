@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+        function populatevalues() {
+            document.getElementById("confirmmsg").innerHTML = getviewstatevalues("confirmmsg");
+        }
+    </script>
+</head>
+<body onload="populatevalues();">
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">CONFIRMATION</h1>
+    </div>
+    </div>
+    <div class="content" id="confirmmsg" style="height:75px;vertical-align:middle; text-align:center; width:90%">
+    </div>
+    <div style="padding-left:8%;">
+         <a class="button--large" href="javascript:OpenPage('LienHistory');">Show History</a>
+         <br />
+         <a class="button--large" href="javascript:OpenPage('Home');">Home</a>
+    </div>
+    <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         app.initialize();
+     </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+    <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="pagetitle">LIEN DETAILS</h1>
+    </div>
+    </div>
+    <div class="content">
+        <table style="width:100%; font-size:11pt; line-height:60px" >
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_title" name="txt_title"  onblur="changecolor('txt_title');"  
+                   value="" placeholder="Title" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_description" name="txt_description"  onblur="changecolor('txt_description');"  
+                   value="" placeholder="Description" style="width:83%" ></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_liencompany" name="txt_liencompany"  onblur="changecolor('txt_liencompany');"  
+                   value="" placeholder="Lien Company" style="width:83%" ></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_liendate" name="txt_liendate"  
+                onblur="changecolor('txt_liendate');" value="" placeholder="Lien Date (MM/DD/YYYY)" style="width:83%" ></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_mileage" name="txt_mileage"  
+                onblur="changecolor('txt_mileage');" onkeydown="return numbersonly(event);" value="" placeholder="Mileage" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_startingbid" name="txt_startingbid"  
+                onblur="changecolor('txt_startingbid');" onkeydown="return numbersonly(event);" value="" placeholder="Starting Bid" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_rate" name="txt_rate"  
+                onblur="changecolor('txt_rate');" onkeydown="return numbersonly(event);" value="" placeholder="Rate" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_location" name="txt_location"  
+                onblur="changecolor('txt_location');" value="" placeholder="Location" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_city" name="txt_city"  
+                onblur="changecolor('txt_city');" value="" placeholder="City" style="width:83%" ></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_state" name="txt_state"  
+                onblur="changecolor('txt_state');" value="" placeholder="State" style="width:83%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_zipcode" name="txt_zipcode"  
+                onblur="changecolor('txt_zipcode');" onkeydown="return numbersonly(event);" value="" placeholder="Zip Code" style="width:83%"></td></tr>
+        </table>
+    </div>
+    <div style="padding-left:8%;">
+         <a class="button--large" href="javascript:saveliendetails();">Submit</a>
+    </div>
+    <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         app.initialize();
+     </script>
+</body>
+</html>
