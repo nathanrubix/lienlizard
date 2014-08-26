@@ -20,29 +20,6 @@
         APIRequestCall(Xml, Method);
     }
     
-//    function getvindetails() {
-//
-//    var reqinfo = "";
-//    reqinfo = "Please enter \n\n";
-//    var count = 0;
-//    var vinnumber = document.getElementById("txt_vinnumber").value;
-//    document.getElementById("txt_vinnumber").style.background = "#fffbff";
-//
-//        if (vinnumber == "") {
-//            reqinfo = reqinfo + "VIN Number\n";
-//            document.getElementById("txt_vinnumber").style.background = error_color;
-//            count++;
-//        }
-//    
-//        if (count != 0) {
-//            alertlabel(reqinfo);
-//        } else {
-//            var Method = "getvindetails";
-//            var Xml = getrequestxml(Method);
-//            APIRequestCall(Xml, Method);
-//        }
-//    }
-    
     function scanBarcode() {
         window.plugins.barcodeScanner.scan( function(result) {
                document.getElementById("txt_vinnumber").value=result.text;
