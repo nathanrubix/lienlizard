@@ -1,4 +1,0 @@
-lienlizard
-==========
-
-LienLizard Auctions

@@ -15,6 +15,70 @@
 * limitations under the License.
 *
 */
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url('sourcesanspro-light-webfont.eot');
+    src: url('sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcesanspro-light-webfont.woff') format('woff'),
+         url('sourcesanspro-light-webfont.ttf') format('truetype'),
+         url('sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url('sourcesanspro-regular-webfont.eot');
+    src: url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcesanspro-regular-webfont.woff') format('woff'),
+         url('sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url('sourcesanspro-semibold-webfont.eot');
+    src: url('sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('sourcesanspro-semibold-webfont.ttf') format('truetype'),
+         url('sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'source-code-pro';
+    src: url('sourcecodepro-regular-webfont.eot');
+    src: url('sourcecodepro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcecodepro-regular-webfont.woff') format('woff'),
+         url('sourcecodepro-regular-webfont.ttf') format('truetype'),
+         url('sourcecodepro-regular-webfont.svg#source_code_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+    font-family: source-sans-pro, sans-serif; 
+    margin:0px 0px 0px 0px;
+    color:#43464B;
+}
+body a {
+     color:#43464B; text-decoration:none;
+}
 
 .button-bar {
   display: table;
@@ -50,6 +114,41 @@
   cursor: default;
   pointer-events: none;
 }
+.navtd{
+    background-color:#f2f2f2; 
+    font-size:0.85em;     
+    left: 0;
+    right: 0;
+    line-height:30px;
+    padding-left:10%;padding-right:5%;
+   }
+.bline{ border-bottom:1px solid #696969;}
+.tcenter{ text-align:center;}
+.tleft{ text-align:left;}
+.tright{ text-align:right;}
+.cwhite{color:#ffffff;}
+.clightwhite{color:#fdfffc;}
+.cblack{color:#0F0F0F;}
+.cerror{color:#FF557F;}
+.bgwhite{background-color:#ffffff;}
+.bglightorange{ background-color:#ff9770;}
+.bglightblue{background-color:#41c3ac;}
+.bglightblue1{background-color:#58c3e5;}
+.bglightgray{background-color:#efefef;}
+.bglightgray2{background-color:#DFE2E2;}
+.bglightblack{background-color:#2E3641;}
+.padall { padding:5px 5px 5px 5px;}
+.padl10 {padding-left:5%;}
+.padl20 {padding-left:10%;}
+.padnone{padding:0px 0px 0px 0px;}
+.fhdr{font-family: source-sans-pro, sans-serif;letter-spacing: 2px; font-size:1.25em;}
+.ftxt{font-family: source-sans-pro, sans-serif;font-size:1em;}
+.fsmalltxt{font-family: source-sans-pro, sans-serif;font-size:0.85em;}
+.fbold{ font-weight:bold;}
+.flbl{font-size:1.25em;}
+.lspace{ letter-spacing:2px;}
+
+
 
 /**
 *
@@ -977,6 +1076,18 @@ input[type="checkbox"]:disabled + .topcoat-checkbox__checkmark {
   box-sizing: border-box;
   background-clip: padding-box;
 }
+
+.dropdown { 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #ebebeb; 
+    outline:0; 
+    height:30px; 
+    width: 250px; 
+    background-color:#ebebeb;
+    padding-top:5px;
+} 
 
 /* topdoc
 name: Checkbox
@@ -3425,6 +3536,24 @@ tags:
 *
 */
 
+
+.topcoat-select {
+  width: 100%;
+  line-height: 5.375rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  padding: 0 1.25rem;
+  border: 1px solid #9daca9;
+  border-radius: 6px; 
+  box-shadow: inset 0 1px rgba(0,0,0,0.1);
+  color: #454545;
+  vertical-align: middle; 
+  background-color:#ffffff;
+  background-image:url("../img/select.png");
+  background-repeat : no-repeat;
+  background-position : right center;
+}
+
 .textarea,
 .topcoat-textarea,
 .topcoat-textarea--large {
@@ -3471,11 +3600,11 @@ tags:
 
 .topcoat-textarea,
 .topcoat-textarea--large {
-  padding: 2rem;
-  font-size: 2.5rem;
+  padding: 1.0em;
+  font-size: 1.0em;
   font-weight: 400;
   border-radius: 6px;
-  line-height: 3rem;
+  line-height: 1.5em;
   border: 1px solid #9daca9;
   background-color: #fff;
   box-shadow: inset 0 1px rgba(0,0,0,0.1);
@@ -3753,6 +3882,92 @@ body {
     width :100%;
     padding-left : 8%;
     vertical-align:middle;
+}
+
+.topcoat-select {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+.topcoat-select {
+  vertical-align: top;
+  outline: none;
+}
+
+.topcoat-select {
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.topcoat-select {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.topcoat-select {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.topcoat-select:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.topcoat-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.topcoat-select::-ms-expand {
+  display: none;
+}
+
+.topcoat-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  appearance: button;
+  text-indent: 0.01px;
+  text-overflow: '';
+  padding: 4px 20px;
+  font-size: 16px;
+  height: 3rem;
+  letter-spacing: 1px;
+  color: #454545;
+  border-radius: 6px;
+  
+  background-color: hsla(180, 1%, 35%, 1);
+  box-shadow: inset 0 1px hsla(0, 0%, 45%, 1);
+  border: 1px solid #fff;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.topcoat-select:hover {
+  background-color: #fff;
+}
+
+.topcoat-select:active {
+  background-color: #fff;
+ }
+
+.topcoat-select:focus {
+  border: 1px solid #fff;
+  outline: 0;
 }
 
 /* This file should include color and image variables corresponding to the dark theme */
