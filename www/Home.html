@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script src="components/loader.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+     <!--<script type="text/javascript" src="js/index.js"></script>-->
+    <script type="text/javascript">
+    
+    function loaduserdetails(){
+        if(getviewstatevalues("vinnumber") != ''){
+            document.getElementById('txt_vinnumber').value = getviewstatevalues("vinnumber");
+        }
+        var Method = "getuserdetails";
+        var Xml = getrequestxml(Method);
+        APIRequestCall(Xml, Method);
+    }
+    
+//    function getvindetails() {
+//
+//    var reqinfo = "";
+//    reqinfo = "Please enter \n\n";
+//    var count = 0;
+//    var vinnumber = document.getElementById("txt_vinnumber").value;
+//    document.getElementById("txt_vinnumber").style.background = "#fffbff";
+//
+//        if (vinnumber == "") {
+//            reqinfo = reqinfo + "VIN Number\n";
+//            document.getElementById("txt_vinnumber").style.background = error_color;
+//            count++;
+//        }
+//    
+//        if (count != 0) {
+//            alertlabel(reqinfo);
+//        } else {
+//            var Method = "getvindetails";
+//            var Xml = getrequestxml(Method);
+//            APIRequestCall(Xml, Method);
+//        }
+//    }
+    
+    function scanBarcode() {
+        window.plugins.barcodeScanner.scan( function(result) {
+               document.getElementById("txt_vinnumber").value=result.text;
+            }, function(error) {
+                alertlabel("Scanning failed: " + error);
+            }
+      );
+      }
+    </script>
+</head>
+<body class="ftxt">
+ <table cellpadding="0" cellspacing="0" style="width:100%;" >  
+ <tr><td class="cwhite tcenter padall fhdr" style="background-color:#343539;color:#c9c9c9;" >Lien Lizard . com</td></tr>   
+
+ <tr><td style="background-color:#43464b;color:#c9c9c9;padding-left:5%; " class="fhdr padl10">
+     <table cellpadding="0" cellspacing="0" style="width:100%;"> 
+     <tr><td>&nbsp;</td></tr>
+     <tr><td class="fbold padall clightwhite" align="center"><span style="font-size:0.825em; font-weight:normal; color#c9c9c9;">Welcome !&nbsp;</span><span id="username">&nbsp;</span></td></tr>
+     <tr><td class="fsmalltxt padall" align="center" id="companyname">&nbsp;</td></tr>
+     <tr><td class="fsmalltxt padall" align="center" style="color:#54c2d9">You have <span id="auctioncount">&nbsp;</span> Live Auctions</td></tr>  
+     <tr><td>&nbsp;</td></tr>
+     </table>     
+ </td></tr>   
+  <tr>
+  <tr><td style="background-color:#0cadb7;color:#ffffff; height:30px; " class="fhdr tcenter">
+      <table cellpadding="0" cellspacing="0" style="width:100%;right:0;left:0" >
+      <tr><td><a href="javascript:openmenu();"><img src="img/LL-mobile-menu.png" alt="Back"/></a></td><td>New Auction</td><td>&nbsp;</td></tr>
+      </table>
+      <div id="menutable" style="width:100%; display:none;position:absolute;z-index:100;">
+      <div class="navtd bline tleft"><a href="#" onclick="logout();">Logout</a></div>
+      <div class="navtd tright"><a href="#" onclick="closemenu();" class="cerror">X&nbsp;Close</a></div>
+      </div>
+    </td></tr>
+  
+  </tr>  
+  <tr><td>&nbsp;</td></tr>
+  <tr><td class="bglightgray2 tcenter padall cerror" id="lbl_error">&nbsp;</td></tr>
+  <tr><td align="center">
+      <table cellpadding="0" cellspacing="0" style="width:83%;">     
+     <tr><td class="padall"><input type="text" class="topcoat-text-input" id="txt_vinnumber" name="txt_vinnumber"  onblur="javascript:changecolor('txt_vinnumber');" value="1G1ND52J93M708234" placeholder="Enter vin number" style="width:100%" value=""></td></tr>
+       <tr><td>&nbsp;</td></tr>
+     <tr><td class="padall">
+         <table cellpadding="0" cellspacing="0" style="width:100%;"> 
+         <tr><td>
+         <!--<a class="button--large"  style="width:100%" id="scan" onclick="scanBarcode();" >Scan</a>-->
+             <a class="button--large"  style="width:100%" id="scan" onclick="scanBarcode();">Scan</a>
+         </td><td>&nbsp;<td>
+         <!--<a class="button--large"  style="width:100%"  href="javascript:getvindetails();" >Next</a>      -->
+         <a class="button--large"  style="width:100%"  href="javascript:getvindetails();" >Next</a>      
+         </td></tr></table>
+         </td></tr>
+         </table>    
+  </td></tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr><td class="tcenter padall fhdr" style="color:#43464B;">OR</td></tr>
+  <tr><td class="tcenter padall fhdr"><a href="LienHistory.html" style="color:#43464B;">Past Auctions..</a></td></tr>
+  </table>   
+  <script type="text/javascript">
+        loaduserdetails();
+        app.initialize();
+  </script>
+</body>
+</html>

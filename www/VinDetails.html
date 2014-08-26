@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+
+        function getvininfo() {
+            var Method = "getvininfo";
+            var Xml = getrequestxml(Method);
+            APIRequestCall(Xml, Method);
+        }
+    </script>
+</head>
+<body class="ftxt" >
+ <table cellpadding="0" cellspacing="0" style="width:100%;" >  
+ <tr><td class="cwhite tcenter padall fhdr" style="background-color:#343539;color:#c9c9c9;" >Lien Lizard . com</td></tr>
+ <tr><td style="background-color:#0cadb7;color:#ffffff; height:30px; " class="fhdr tcenter">
+      <table cellpadding="0" cellspacing="0" style="width:100%;right:0;left:0" >
+      <tr><td><a href="javascript:openmenu();"><img src="img/LL-mobile-menu.png" alt="Back"/></a></td><td>Make / Model</td><td>&nbsp;</td></tr>
+      </table>
+      <div id="menutable" style="width:100%; display:none;position:absolute;z-index:100;">
+      <div class="navtd bline tleft"><a href="Home.html">Home</a></div>
+      <div class="navtd bline tleft"><a href="LienHistory.html">Past Auctions</a></div>
+      <div class="navtd bline tleft"><a href="#" onclick="logout();">Logout</a></div>
+      <div class="navtd tright"><a href="#" onclick="closemenu();" class="cerror">X&nbsp;Close</a></div>
+      </div>
+ </td></tr>
+ </table>
+    <!-- TODO: Please edit here -->
+     <table cellpadding="0" cellspacing="0" style="width:100%;background-color:#43464b;"> 
+     <tr><td>&nbsp;</td></tr>
+     <tr><td class="padall clightwhite" align="center" style="color:#fdfffc;">Pls select vehicle make to continue.</td></tr>
+     <tr><td>&nbsp;</td></tr>
+     </table>    
+     <table style="width:100%; line-height:40px" class="ftxt"><tr><td align="center">
+     <div id="vininfo"></div>
+     <table cellpadding="0" style="width:90%;">
+        <tr><td align="right" style="width:50%"><a class="button--large" href="Home.html">Prev</a></td>
+        <td align="left"><a class="button--large" href="javascript:setvindetails();">Next</a></td>            
+        </tr></table>
+   </td></tr></table>
+    <script>
+        getvininfo();
+    </script>
+</body>
+</html>

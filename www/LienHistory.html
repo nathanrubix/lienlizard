@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        function populatevalues(mode) {
+            if (mode == "default") {
+                setviewstatevalues("currentrid", "-999");
+            }
+            var Method = "getlienhistory";
+            var Xml = getrequestxml(Method);
+            APIRequestCall(Xml, Method);
+        }
+
+        function changehistory(id) {
+            var rid =  document.getElementById(id).value;
+            setviewstatevalues("currentrid", rid);
+            populatevalues('idchanged');
+        }
+        
+        function openuploadimage(id){
+           setviewstatevalues("frompage", "history");
+           setviewstatevalues("auctionid", document.getElementById(id).value); 
+           window.location = "PhotoUpload.html";
+        }
+        
+    </script>
+</head>
+<body  class="ftxt">
+    <!-- TODO: Please edit here -->
+    <table cellpadding="0" cellspacing="0" style="width:100%;" >  
+        <tr><td class="cwhite tcenter padall fhdr" style="background-color:#343539;color:#c9c9c9;" >Lien Lizard . com</td></tr>   
+      <tr><td style="background-color:#0cadb7;color:#ffffff; height:30px; " class="fhdr tcenter">
+          <table cellpadding="0" cellspacing="0" style="width:100%;right:0;left:0" >
+          <tr><td><a href="javascript:openmenu();"><img src="img/LL-mobile-menu.png" alt="Back"/></a></td><td>New Auction</td><td>&nbsp;</td></tr>
+          </table>
+          <div id="menutable" style="width:100%; display:none;position:absolute;z-index:100;">
+          <div class="navtd bline tleft"><a href="Home.html">Home</a></div>
+          <div class="navtd bline tleft"><a href="#" onclick="logout();">Logout</a></div>
+          <div class="navtd tright"><a href="#" onclick="closemenu();" class="cerror">X&nbsp;Close</a></div>
+          </div>
+        </td></tr>
+        </tr>  
+    
+    <tr><td style="background-color:#43464b;color:#c9c9c9;padding-left:5%; " class="fhdr padl10">
+             <table cellpadding="0" cellspacing="0" style="width:100%;"> 
+             <tr><td>&nbsp;</td></tr>
+             <tr><td class="fbold padall clightwhite" align="center"><span style="font-size:0.825em; font-weight:normal; color#c9c9c9;" id="title"></span></td></tr>
+             <tr><td class="fsmalltxt padall" align="center" id="vehicleinfo"></td></tr>
+             <tr><td class="fsmalltxt padall" align="center" ></td></tr>
+             <tr><td class="fsmalltxt padall" align="center" style="color:#54c2d9" id="auctioninfo"></td></tr>  
+             <tr><td class="fsmalltxt padall" align="center" style="color:#54c2d9" id="auctiondate"></td></tr>  
+             <tr><td>&nbsp;</td></tr>
+             </table>     
+         </td></tr>   
+    <tr>
+
+    <tr><td class="bglightgray2 tcenter padall cerror" id="lbl_error">&nbsp;</td></tr>
+    <tr><td align="center">
+     <table cellpadding="0" cellspacing="0" style="width:83%;">  
+     <tr><td>Vin #</td><td align="center">:</td><td class="fbold lspace" style="padding-left:5px" id="vinnumber"></td></tr>
+     <tr><td colspan="3">&nbsp;</td></tr>
+     <tr><td id="description" colspan="3"></td></tr>
+     <tr><td colspan="3">&nbsp;</td></tr>
+     <tr style="margin-top:20px"><td class="padall" colspan="3">
+     <input type="hidden" id="hdn_previd" name="hdn_previd" value="" />
+     <input type="hidden" id="hdn_nextid" name="hdn_nextid" value="" />
+     <input type="hidden" id="hdn_aucid" name="hdn_aucid" value="" />
+         <table cellpadding="0" cellspacing="0" style="width:100%;"> 
+         <tr><td style="width:50%">
+         <a class="button--large" href="javascript:changehistory('hdn_previd');"  id="prevbtn" >Prev</a></span>
+         </td><td>&nbsp;<td style="width:50%">
+         <a class="button--large" href="javascript:changehistory('hdn_nextid');" id="nextbtn">Next</a></span>
+         </td></tr></table>
+         </td></tr>
+         </table>    
+        </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td class="tcenter padall fhdr"><span id="uploadimage">
+        <a href="javascript:openuploadimage('hdn_aucid');" style="color:#43464B;" style="display:none">Upload Image</a></span>
+        </td></tr>
+        <tr><td class="tcenter padall fhdr" style="color:#43464B;">OR</td></tr>
+        <tr><td class="tcenter padall fhdr"><a href="Home.html" style="color:#43464B;">New Auction</a></td></tr>
+    </table>   
+    
+    
+    
+    
+     <!--<table cellpadding="0" cellspacing="0" style="width:100%;" >  
+     <tr><td class="cwhite tcenter padall fhdr" style="background-color:#343539;color:#c9c9c9;" >Lien Lizard . com</td></tr>
+     
+     <tr><td style="background-color:#0cadb7;color:#ffffff; height:30px; " class="fhdr tcenter">
+          <table cellpadding="0" cellspacing="0" style="width:100%;right:0;left:0" >
+          <tr><td><a href="javascript:openmenu();"><img src="img/LL-mobile-menu.png" alt="Back"/></a></td><td>Past Auctions</td><td>&nbsp;</td></tr>
+          </table>
+          <div id="menutable" style="width:100%; display:none;position:absolute;z-index:100;">
+          <div class="navtd bline tleft"><a href="Home.html">Home</a></div>
+          <div class="navtd bline tleft"><a href="#" onclick="logout();">Logout</a></div>
+          <div class="navtd tright"><a href="#" onclick="closemenu();" class="cerror">X&nbsp;Close</a></div>
+          </div>
+     </td></tr>
+     <tr><td><div id="historyinfo"></div></td></tr>
+     </table>-->
+     
+     <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         //app.initialize();
+         populatevalues('default');
+     </script>
+</body>
+</html>

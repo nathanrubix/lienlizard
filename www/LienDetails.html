@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body class="ftxt">
+    <!-- TODO: Please edit here -->
+     <table cellpadding="0" cellspacing="0" style="width:100%;" >  
+     <tr><td class="cwhite tcenter padall fhdr" style="background-color:#343539;color:#c9c9c9;" >Lien Lizard . com</td></tr>
+     <tr><td style="background-color:#0cadb7;color:#ffffff; height:30px; " class="fhdr tcenter">
+      <table cellpadding="0" cellspacing="0" style="width:100%;right:0;left:0" >
+      <tr><td><a href="javascript:openmenu();"><img src="img/LL-mobile-menu.png" alt="Back"/></a></td><td>Auction Details</td><td>&nbsp;</td></tr>
+      </table>
+      <div id="menutable" style="width:100%; display:none;position:absolute;z-index:100;">
+      <div class="navtd bline tleft"><a href="Home.html">Home</a></div>
+      <div class="navtd bline tleft"><a href="LienHistory.html">Past Auctions</a></div>
+      <div class="navtd bline tleft"><a href="#" onclick="logout();">Logout</a></div>
+      <div class="navtd tright"><a href="#" onclick="closemenu();" class="cerror">X&nbsp;Close</a></div>
+      </div>
+     </td></tr>
+     </table>
+    <table cellpadding="0" cellspacing="0" style="width:100%;background-color:#43464b;"> 
+     <tr><td>&nbsp;</td></tr>
+     <tr><td class="padall clightwhite" align="center" style="color:#fdfffc;">Pls enter lien details to create auction.</td></tr>
+     <tr><td>&nbsp;</td></tr>
+     
+     </table>  
+    <table style="width:100%; line-height:40px" class="ftxt"><tr><td align="center">
+     <table style="width:90%; line-height:40px;" class="ftxt"> 
+            <tr><td>Auction Title</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_title" name="txt_title"  onblur="changecolor('txt_title');"  value="" placeholder="Title" style="width:100%"></td></tr>
+            <tr><td>Auction Description</td>
+            <tr><td>
+            <textarea class="topcoat-textarea" style="width:100%;" placeholder="Auction Description" id="txt_description" name="txt_description"  onblur="changecolor('txt_description');"></textarea>
+            </td></tr>
+            <tr><td>Lien Holder</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_liencompany" name="txt_liencompany"  onblur="changecolor('txt_liencompany');"  
+                   value="" placeholder="Lien Company" style="width:100%" ></td></tr>
+            <tr><td>Lien Date</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_liendate" name="txt_liendate"  
+                onblur="changecolor('txt_liendate');" value="" placeholder="Lien Date (MM/DD/YYYY)" style="width:100%" ></tr>
+            <!--<tr><td>Mileage</td>
+            <tr><td>               
+            <input type="text" class="topcoat-text-input" id="txt_mileage" name="txt_mileage"  
+                onblur="changecolor('txt_mileage');" onkeydown="return numbersonly(event);" value="" placeholder="Mileage" style="width:100%"></td></tr>-->
+            <tr><td>Starting Bid</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_startingbid" name="txt_startingbid"  
+                onblur="changecolor('txt_startingbid');" onkeydown="return numbersonly(event);" value="" placeholder="Starting Bid" style="width:100%"></td></tr>
+            <tr><td>Daily Storage Rate</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_rate" name="txt_rate"  
+                onblur="changecolor('txt_rate');" onkeydown="return numbersonly(event);" value="" placeholder="Daily Storage Rate" style="width:100%"></td></tr>
+            <tr><td>Address</td>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_location" name="txt_location"  
+                 value="" placeholder="Address" style="width:100%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_city" name="txt_city"  
+                 value="" placeholder="City" style="width:100%" ></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_state" name="txt_state"  
+                value="" placeholder="State" style="width:100%"></td></tr>
+            <tr><td><input type="text" class="topcoat-text-input" id="txt_zipcode" name="txt_zipcode"  
+                onkeydown="return numbersonly(event);" value="" placeholder="Zip Code" style="width:100%"></td></tr>
+            </table>
+           
+     <table cellpadding="0" style="width:90%; padding-top:10px" align="center">
+        <tr>
+        <td align="right" style="width:50%"><a class="button--large" href="VinDetails.html">Prev</a></td>
+        <!--<td align="left"><a class="button--large"  href="javascript:saveliendetails();">Next</a></td>-->
+        <td align="left"><a class="button--large"  href="javascript:saveliendetails();">Next</a></td>
+        </tr></table>
+   </td></tr></table>
+  
+    <script src="components/loader.js"></script>
+     <script type="text/javascript">
+         document.getElementById('txt_title').value = getviewstatevalues("make") + " , " + getviewstatevalues("model") + " " + getviewstatevalues("year") + " for sale !";
+         document.getElementById('txt_description').value = getviewstatevalues("make") + " , " + getviewstatevalues("model") + " " + getviewstatevalues("year") + " for sale !  "+ getviewstatevalues("mileage") + " Miles";
+         document.getElementById('txt_liencompany').value = getviewstatevalues("username");
+         document.getElementById('txt_city').value = getviewstatevalues("city");
+         document.getElementById('txt_state').value = getviewstatevalues("state");
+         document.getElementById('txt_zipcode').value = getviewstatevalues("zip");
+         document.getElementById('txt_location').value = getviewstatevalues("address");
+         app.initialize();
+     </script>
+</body>
+</html>
